@@ -191,4 +191,9 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mRequestQueue.cancelAll(AppUtils.TAG);
+    }
 }

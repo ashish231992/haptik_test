@@ -43,8 +43,11 @@ public class ChatMessageAdapter extends RecyclerView.Adapter<ChatMessageAdapter.
     public void onBindViewHolder(ChatViewHolder holder, int position) {
 
         mChatMessages = messages.get(position);
-        if (mChatMessages.getImageUrl().equals("") ) {
 
+        if (mChatMessages.getImageUrl().equals("") ) {
+            Picasso.with(mContext)
+                    .load("http://img5.ropose.com/userImages/16557067377322653404501466127117042162245336_circle_100x100.png")
+                    .into(holder.chatView);
         }else{
             Picasso.with(mContext)
                     .load(Uri.parse(mChatMessages.getImageUrl()))
